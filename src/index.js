@@ -87,11 +87,11 @@ const rrfProps = {
 
 export const onAuthStateChange = () => {
   return firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // console.log(user);
-    } else {
-      console.log('The user is not logged in');
-    }
+    // if (user) {
+    //    console.log(user);
+    // } else {
+    //   console.log('The user is not logged in');
+    // }
   });
 };
 

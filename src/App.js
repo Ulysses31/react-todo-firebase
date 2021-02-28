@@ -7,7 +7,8 @@ import {
   Grid,
   IconButton,
   makeStyles,
-  Snackbar
+  Snackbar,
+  Typography
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import PropTypes from 'prop-types';
@@ -148,6 +149,18 @@ function App() {
                     component={TasksDash}
                   />
                 </Switch>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography
+                  variant='p'
+                  component='h6'
+                  style={{
+                    fontSize: '1em',
+                    opacity: 0.5
+                  }}
+                >
+                  Todo - Tasks &copy; Iordanidis Chris
+                </Typography>
               </Grid>
             </Grid>
           </Container>

@@ -127,6 +127,7 @@ export default function AddTask() {
               variant='contained'
               color='primary'
               fullWidth
+              disabled={!state.task}
             >
               {/* <ClearIcon style={{ fontSize: 18 }}/>&nbsp; */}
               {selectedStoreTask.id === 0
@@ -141,6 +142,7 @@ export default function AddTask() {
               color='primary'
               fullWidth
               onClick={clearSelectedTask}
+              disabled={!state.task}
             >
               {/* <ClearIcon style={{ fontSize: 18 }}/>&nbsp; */}
               Clear

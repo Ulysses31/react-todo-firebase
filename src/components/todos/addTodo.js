@@ -138,6 +138,7 @@ export default function AddTodo() {
               variant='contained'
               color='primary'
               fullWidth
+              disabled={!state.value.todo}
             >
               {/* <ClearIcon style={{ fontSize: 18 }}/>&nbsp; */}
               {selectedStoreTodo.key === 0
@@ -152,6 +153,7 @@ export default function AddTodo() {
               color='primary'
               fullWidth
               onClick={clearSelectedTodo}
+              disabled={!state.value.todo}
             >
               {/* <ClearIcon style={{ fontSize: 18 }}/>&nbsp; */}
               Clear
