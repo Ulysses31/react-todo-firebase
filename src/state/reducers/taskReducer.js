@@ -1,6 +1,7 @@
 const initialState = {
   selectedTask: {
     id: 0,
+    uid: '',
     task: '',
     done: false,
     date: ''

@@ -37,8 +37,8 @@ export default function SignIn() {
   const firebase = useFirebase();
   const dispatch = useDispatch();
   const [state, setState] = useState({
-    email: 'iordanidischr@gmail.com',
-    password: 'ci281978'
+    email: 'admin@admin.com',
+    password: 'adminadmin'
   });
   const uid = useSelector(
     (state) => state.firebase.auth.uid

@@ -28,6 +28,9 @@ export default function AddTask() {
   const classes = useStyles();
   const firestore = useFirestore();
   const dispatch = useDispatch();
+  const uid = useSelector(
+    (state) => state.firebase.auth.uid || ''
+  );
   const selectedStoreTask = useSelector(
     (state) => state.tasks.selectedTask || {}
   );
@@ -55,6 +58,7 @@ export default function AddTask() {
       firestore
         .collection('tasks')
         .add({
+          uid: uid,
           task: state.task,
           done: false,
           date: firestore.FieldValue.serverTimestamp()

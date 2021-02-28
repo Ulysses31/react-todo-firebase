@@ -28,12 +28,16 @@ export default function AddTodo() {
   const classes = useStyles();
   const firebase = useFirebase();
   const dispatch = useDispatch();
+  const uid = useSelector(
+    (state) => state.firebase.auth.uid || ''
+  );
 
   const selectedStoreTodo = useSelector(
     (state) =>
       state.todos.selectedTodo || {
         key: 0,
         value: {
+          uid: uid,
           todo: '',
           done: false,
           date: ''
@@ -50,6 +54,7 @@ export default function AddTodo() {
     setState({
       ...state,
       value: {
+        uid: uid,
         todo: e.target.value,
         done: state.value.done,
         date: state.value.state
@@ -67,6 +72,7 @@ export default function AddTodo() {
       // ...insert method
       firebase
         .push('todos', {
+          uid: uid,
           todo: state.value.todo,
           done: false,
           date: firebase.database.ServerValue.TIMESTAMP
@@ -99,6 +105,7 @@ export default function AddTodo() {
       selectedTodo({
         key: 0,
         value: {
+          uid: '',
           todo: '',
           done: false,
           date: ''

@@ -2,6 +2,7 @@ const initialState = {
   selectedTodo: {
     key: 0,
     value: {
+      uid: '',
       todo: '',
       done: false,
       date: ''
